@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+    <!-- This code is only meant for previewing your Reflow design. -->
+    <head>
+    	<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" href="css/boilerplate.css" />
+	<link rel="stylesheet" href="css/detallepage.css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
+    
+    <!--SCRIPTS MOBILE-->
+<link href="jquery-mobile/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css">
+<script src="jquery-mobile/jquery-1.5.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jTabs.js"></script>
+	<script>
+		$(document).ready(function(){
+		$("ul.tabs").jTabs({content: ".tabs_content"});});     
+	</script>
+
+
+    </head>
+    <body>
+
+<div data-role="page" id="page6">
+	<div id="primaryContainer" class="primaryContainer clearfix">
+               <header id="header_home">
+            	<div class="logo"><img src="images/logo_sanpablo_color.png"></div>
+                <div id="menu">
+                	<ul id="menu_header">
+                          <li class="first_link_search">
+                            <div data-role="fieldcontain" class="search">
+                              <input class="search_home_1024" type="search" name="" id="searchinput1" value="" placeholder="Buscar"  />
+                            </div>
+                            
+                          </li>
+                        <li class="second_link_sesion"><a class="inicio" href="#"><img src="images/sesion_icon_48.jpg"></a></li>
+                        <li><a class="btn_library" href="#"><img src="images/library_icon_48.jpg"></a></li>
+                        <li><a class="btn_faq" href="#"><img src="images/FAQ_icon_48.jpg"></a></li>
+                    </ul>
+                </div>
+            </header>
+            
+       <div id='subHeader' class='clearfix'>
+           <p id='detalle_text'>
+           Temas Biblicos
+           </p>
+           <div id='detalle_icons' class='clearfix'>
+               <img id='detalle_fav' src='images/star.png' class='image' />
+               <img id='detalle_split' src='images/spliter_black.png' class='image' />
+               <img id='detalle_image' src='images/spliter_white.png' class='image' />
+               <img id='detalle_add' src='images/mas.png' class='image' />
+           </div>
+       </div>
+       <img id='book' src='images/bigBook.png' class='image' />
+       <div id='detalle_info' class='clearfix'>
+           <p id='detalle_text1'>
+           Titulo
+           </p>
+           <p id='detalle_text2'>
+           Autor Nombre largo
+           </p>
+           <p id='detalle_text3'>
+           Valoración genral
+           </p>
+           <div id='value' class='clearfix'>
+               <img id='detalle_image1' src='images/starPoints.png' class='image' />
+               <img id='detalle_image2' src='images/starPoints.png' class='image' />
+               <img id='detalle_image3' src='images/starPoints.png' class='image' />
+               <img id='detalle_image4' src='images/starPoints.png' class='image' />
+               <img id='detalle_image5' src='images/starPoints.png' class='image' />
+           </div>
+           <p id='detalle_text4'>
+           Precio<br /><span id='detalle_textspan'>$20.000</span>
+           </p>
+       </div>
+       <img id='detalle_btnComprar' src='images/btnComprar.jpg' class='image' />
+       <img id='detalle_btnMuestra' src='images/btnMuestra.jpg' class='image' />
+       <div id='tab_detalle' class='clearfix'>
+       
+       		<ul class="tabs">
+                <li class="active"><a href="#">Sinopsis</a></li>
+                <li><a href="#">Detalles</a></li>
+                <li><a href="#">Valoración</a></li>
+                <li><a href="#">Opinión</a></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="tabs_content">
+            <div>Es el mejor compendio de lo que todo cristiano debe saber para esta vida y la eterna, en un lenguaje sencillo, fácil de entender.
+Está continuamente renovándose: desde las nuevas corrientes sobre el origen del cosmos hasta la clonación, siempre desde el punto de vista católico, siguiendo el Magisterio de la Iglesia.
+Basta echar una mirada al índice general para observar que nada escapa a la visión católica del ser humano y de la fe y la vida cristianas: comienza por Dios (origen del cosmos, de la vida y del hombre y las perfecciones de Dios, el misterio de la Trinidad), la Encarnación (Jesucristo, María, José), la Redención, la Iglesia, la vida sobrenatural (la gracia, el pecado original, la oración), el sacramento de la Penitencia (pecad o, mandamientos, partes de la confesión), los sacramentos del Bautismo, la Confirmación, el Orden sacerdotal, el Matrimonio (sacramento, divorcio, adulterio, armonía conyugal, cariño matrimonial, procreación de los hijos, planificación familiar), el Más allá (infierno, cielo, purgatorio).
+Sigue a todo esto un Apéndice, en el que se ofrecen normas prácticas para la confesión, un oracional selecto, los libros recomendados y buenos índices de materias y de nombres. ¡Un libro imprescindible!</div>
+
+            <div>
+            	<br/>
+               <br/>
+            	<strong class="bold">Idioma:</strong> Español <br/> <br/>
+               <strong class="bold">Colección:</strong> Temas Bíblicos <br/> <br/>
+               <strong class="bold">Editorial:</strong> San Pablo Colombia <br/> <br/>
+               <strong class="bold">Páginas Impresas:</strong> 250 páginas <br/> <br/>
+              <strong class="bold">Tamaño:</strong> 7.5 megas
+            </div>
+            
+            <div id="valoracion">
+            	<ul>
+                <li>
+            		<div class="grid-4">
+                      <p class="comment_date">dd/mm/aaaa</p>
+                      <p class="comment_name bold">Pablo Maria Bolivar</p>
+                      <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque et est eu feugiat. Nulla fermentum aliquam justo, eget pellentesque elit consectetur eu.</p>
+                  </div>
+               <div class="grid-2">
+               	Valoración:
+                	<br/>
+                    <br/>
+                   <img id='star1' src='images/starPoints.png' class='image' />
+                   <img id='star2' src='images/starPoints.png' class='image' />
+                   <img id='star3' src='images/starPoints.png' class='image' />
+                   <img id='star4' src='images/starPoints.png' class='image' />
+                   <img id='star5' src='images/starPoints.png' class='image' />
+               </div>
+                </li>
+                <li>
+            		<div class="grid-4">
+                      <p class="comment_date">dd/mm/aaaa</p>
+                      <p class="comment_name bold">Pablo Maria Bolivar</p>
+                      <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque et est eu feugiat. Nulla fermentum aliquam justo, eget pellentesque elit consectetur eu.</p>
+                  </div>
+               <div class="grid-2">
+               	Valoración:
+                	<br/>
+                    <br/>
+                   <img id='star1' src='images/starPoints.png' class='image' />
+                   <img id='star2' src='images/starPoints.png' class='image' />
+                   <img id='star3' src='images/starPoints.png' class='image' />
+                   <img id='star4' src='images/starPoints.png' class='image' />
+                   <img id='star5' src='images/starPoints.png' class='image' />
+               </div>
+                </li>
+                </ul>
+            </div>
+            
+            <div>
+            
+                <div id='form_opinion_box' class='clearfix'>
+                   <p id='form_opinion_text'>
+                   *Nombre:
+                   </p>
+                   <div id='form_opinion_box1' class='clearfix'>
+                     <div data-role="fieldcontain">
+                       <input type="text" name="textinput" id="opinion_name" value=""  />
+                     </div>
+                   </div>
+                   <p id='form_opinion_text1'>
+                   *E-mail:
+                   </p>
+                   <div id='form_opinion_box2' class='clearfix'>
+                     <div data-role="fieldcontain">
+                       <input type="text" name="textinput" id="opinion_mail" value=""  />
+                     </div>
+                   </div>
+                   <div id='form_opinion_box3' class='clearfix'>
+                   *Valoración
+                   <br/>
+                       <div class="grid-full">
+                           <img id='star1' src='images/starPoints.png' class='image' />
+                           <img id='star2' src='images/starPoints.png' class='image' />
+                           <img id='star3' src='images/starPoints.png' class='image' />
+                           <img id='star4' src='images/starPoints.png' class='image' />
+                           <img id='star5' src='images/starPoints.png' class='image' />
+                       </div>
+                   </div>
+               </div>
+               <div id='form_opinion_box4' class='clearfix'>
+                   <p id='form_opinion_text2'>
+                   *Déjanos aquí tu opinión
+                   </p>
+                   <div id='form_opinion_box5' class='clearfix'>
+                     <div data-role="fieldcontain">
+                       <textarea cols="40" rows="8" name="textarea" id="opinion_area"></textarea>
+                     </div>
+                   	
+                   </div>
+                   <div id='form_opinion_box6' class='clearfix'>
+                   </div>
+               </div>
+        
+            </div>
+            
+            </div>
+            
+            </div>
+            
+            <!-- contenido pestañas-->
+            
+       <div id='detalle_slider' class='clearfix'>
+           <div id="detalle_categoria" class='clearfix'>
+           	<ul>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                </ul>
+           </div>
+           <div id='titleSlider' class='clearfix'>
+           </div>
+       </div>
+                        
+      </div>
+       <div data-role="footer" class="nav_bottom">
+                <nav>
+                    <a href="#">Categorias</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Promociones</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Destacado</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Autores</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Comprados </a>
+                </nav>
+            </div>
+
+	</div>
+    </body>
+</html>

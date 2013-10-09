@@ -1,0 +1,310 @@
+/* This code is only meant for previewing your Reflow design. */
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+#perfil_box {
+    float: left;
+    height: auto;
+    margin-left: -100%;
+    margin-top: 37px;
+    clear: none;
+    width: 100%;
+}
+
+#perfil_image1 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0%;
+    margin-top: 37px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#perfil_box1 {
+    float: left;
+    height: 153.078125px;
+    margin-left: 51.16764%;
+    margin-top: 61.984375px;
+    clear: none;
+    width: 12.760634%;
+}
+
+#perfil_image3 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0.734694%;
+    margin-top: 1.078125px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#perfil_text {
+    float: left;
+    font-size: 1em;
+    width: 14.667969%;
+    height: auto;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1em;
+    word-wrap: break-word;
+    margin-left: 59.731771%;
+    margin-top: 13px;
+    clear: both;
+    min-height: 25px;
+}
+
+#perfil_fields {
+    float: left;
+    height: auto;
+    margin-left: 4%;
+    margin-top: 32px;
+    clear: both;
+    width: 89%;
+	color: #333333;
+	font-size: 140%;
+}
+
+.lista_perfil{
+	list-style:none;
+	padding:0 2% 1% 2%;;
+	text-indent: 0;
+	}
+
+#perfil_fields li{
+	display: block;
+	margin: 0;
+	position: relative;
+	overflow: visible;
+	text-align: left;
+	border: 1px solid #ccc ;
+	padding:2%
+	}
+
+.edit_btn{
+	position: absolute;
+	width: %;
+	height: 65%;
+	top: 15%;
+	right: 0;
+	margin: 5px;
+	color:#C7C7C7 !important;
+	}
+
+#perfil_image2 {
+    float: left;
+    width: auto;
+    max-width: 19.46544%;
+    height: auto;
+    margin-left: 6.165294%;
+    margin-top: 47px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#perfil_image {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 32.930501%;
+    margin-top: 49px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 1024px) {
+   #perfil_image3 {
+        margin-top: 1px;
+        margin-left: 0.765367%;
+        clear: none;
+   }
+
+   #perfil_box1 {
+        height: 163.546875px;
+        width: 14.6698%;
+        margin-top: 65.984375px;
+        margin-left: 2.397156%;
+        clear: none;
+   }
+
+   #perfil_text {
+        width: 14.666748%;
+        font-family: pt-sans;
+        font-size: 1.5em;
+        color: rgb(255, 255, 255);
+        margin-top: 125px;
+        margin-left: 59.732056%;
+        clear: none;
+   }
+
+   #perfil_image2 {
+        margin-top: 85px;
+        margin-left: -68.234253%;
+        clear: none;
+   }
+   
+   #perfil_image{
+	   display:none;
+	 }
+}
+
+@media only screen and (max-width: 768px) {
+   #perfil_text {
+        margin-top: 25.125px;
+        margin-left: 42.608643%;
+        clear: none;
+        width: 14.666748%;
+   }
+
+   #perfil_box1 {
+        margin-top: 51.125px;
+        margin-left: -17.333984%;
+        clear: none;
+        width: 20.009359%;
+        height: 163.546875px;
+   }
+
+   #perfil_image1 {
+        margin-top: 43px;
+        margin-left: 0%;
+        clear: both;
+   }
+
+   #perfil_box {
+        margin-top: 43px;
+        margin-left: -100%;
+        clear: none;
+        width: 100%;
+   }
+
+   #perfil_image2 {
+        margin-top: 47px;
+        margin-left: -51.11084%;
+        clear: none;
+		display:none;
+   }
+
+   #perfil_image {
+        float: left;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        margin: 51px auto 0px 35.013835%;
+        clear: none;
+        color: rgb(0, 0, 0);
+		display:block;
+   }
+
+   #perfil_box2 {
+        width: 100%;
+        height: 200px;
+   }
+}
+
+@media only screen and (max-width: 480px) {
+   #perfil_text {
+        font-size: 0.8em;
+        height: auto;
+        width: 19.466146%;
+        margin-top: 8.125px;
+        margin-left: 40.263672%;
+        clear: none;
+        min-height: 14px;
+   }
+
+   #perfil_image2 {
+        margin-top: 47px;
+        margin-left: -53.567708%;
+        clear: none;
+   }
+
+   #perfil_box1 {
+        margin-top: 30.125px;
+        margin-left: -22.675781%;
+        clear: none;
+        width: 25.595703%;
+        height: 146.546875px;
+   }
+
+   #perfil_image {
+        margin-top: 51px;
+        margin-left: 25.804036%;
+        clear: none;
+   }
+
+   #perfil_box {
+        width: 100%;
+   }
+
+   #perfil_box2 {
+        width: 100%;
+        height: 200px;
+   }
+}
+
+@media only screen and (max-width: 320px) {
+   #perfil_image {
+        margin-top: 28px;
+        margin-left: 25.595703%;
+        clear: none;
+        height: auto;
+        width: auto;
+        max-width: 48.803711%;
+        margin-right: auto;
+   }
+
+   #perfil_image1 {
+        margin-top: 27.609375px;
+        margin-left: 0%;
+        clear: both;
+   }
+
+   #perfil_box {
+        width: 100%;
+        margin-top: 27.609375px;
+        margin-left: -100%;
+        clear: none;
+   }
+
+   #perfil_box2 {
+        width: 100%;
+        height: 200px;
+        margin-top: 32px;
+        margin-left: 0%;
+        clear: both;
+   }
+
+   #perfil_text {
+        font-size: 0.6em;
+        height: auto;
+        min-height: 0px;
+        width: 19.462891%;
+        margin-top: 4.125px;
+        margin-left: 40.263672%;
+        clear: none;
+   }
+
+   #perfil_box1 {
+        width: 28.730469%;
+        height: 92.9375px;
+        margin-top: 17.125px;
+        margin-left: -24.238281%;
+        clear: none;
+   }
+   
+   #perfil_fields {
+	   font-size:80%;
+	   margin-top:0;
+	   }
+}
+

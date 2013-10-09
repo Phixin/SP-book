@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="utf-8" />
+	<title>San Pablo APP</title>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/stylesheet.css" type="text/css" charset="utf-8" />
+    
+    <link rel="stylesheet" href="css/boilerplate.css" />
+	<link rel="stylesheet" href="css/perfilpage.css" />
+	<link rel="stylesheet" href="css/categoriapage.css" />
+	<link rel="stylesheet" href="css/categoriaspage.css" />
+	<link rel="stylesheet" href="css/detallepage.css" />
+    
+	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+	<script>var __adobewebfontsappname__ = "reflow"</script>
+	<script src="http://use.edgefonts.net/pt-sans:n4,i4,n7,i7:all.js"></script>
+
+    
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!--SCRIPTS MOBILE-->
+<link href="jquery-mobile/jquery.mobile-1.0a3.min.css" rel="stylesheet" type="text/css">
+<script src="jquery-mobile/jquery-1.5.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0a3.min.js" type="text/javascript"></script>
+	
+	<script src="js/webServiceData.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jTabs.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$("ul.tabs").jTabs({content: ".tabs_content"});});    
+		
+		var isOpenUser 	= false;
+		var isOpenShop 	= false;
+		var isOpenFaq	= false;
+		
+		var actualPage;
+		
+
+    ///-------------- BY USER -----------------------
+		//hide and show user setting
+		function onShowUser()
+		{
+			if(!isOpenUser)
+			{
+				closeAll();
+				$("#userDiv").css({"display":"block"});
+				isOpenUser = true;
+			}
+			else
+			{
+				closeAll();
+				isOpenUser = false;
+			}
+		} 
+		
+		//hide and show shopincar
+		function onShowShop()
+		{
+			if(!isOpenShop)
+			{
+				closeAll();
+				$("#shopDiv").css({"display":"block"});
+				isOpenShop = true;
+			}
+			else
+			{
+				closeAll();
+				isOpenShop = false;
+			}
+		}
+		
+		//hide and show faq
+		function onShowFaq()
+		{
+			if(!isOpenFaq)
+			{
+				closeAll();
+				$("#faqDiv").css({"display":"block"});
+				isOpenFaq = true;
+			}
+			else
+			{
+				closeAll();
+				isOpenFaq = false;
+			}
+		}
+
+     ///-------------- BY CATEGORY -----------------------
+    //hide and show user setting
+    function onShowUserCat()
+    {
+      if(!isOpenUser)
+      {
+        closeAllCat();
+        $("#userDivCat").css({"display":"block"});
+        isOpenUser = true;
+      }
+      else
+      {
+        closeAllCat();
+        isOpenUser = false;
+      }
+    } 
+    
+    //hide and show shopincar
+    function onShowShopCat()
+    {
+      if(!isOpenShop)
+      {
+        closeAllCat();
+        $("#shopDivCat").css({"display":"block"});
+        isOpenShop = true;
+      }
+      else
+      {
+        closeAllCat();
+        isOpenShop = false;
+      }
+    }
+    
+    //hide and show faq
+    function onShowFaqCat()
+    {
+      if(!isOpenFaq)
+      {
+        closeAllCat();
+        $("#faqDivCat").css({"display":"block"});
+        isOpenFaq = true;
+      }
+      else
+      {
+        closeAllCat2();
+        isOpenFaq = false;
+      }
+    }
+
+
+     ///-------------- BY CATEGORY2 -----------------------
+    //hide and show user setting
+    function onShowUserCat2()
+    {
+      if(!isOpenUser)
+      {
+        closeAllCat2();
+        $("#userDivCat2").css({"display":"block"});
+        isOpenUser = true;
+      }
+      else
+      {
+        closeAllCat2();
+        isOpenUser = false;
+      }
+    } 
+    
+    //hide and show shopincar
+    function onShowShopCat2()
+    {
+      if(!isOpenShop)
+      {
+        closeAllCat2();
+        $("#shopDivCat2").css({"display":"block"});
+        isOpenShop = true;
+      }
+      else
+      {
+        closeAllCat2();
+        isOpenShop = false;
+      }
+    }
+    
+    //hide and show faq
+    function onShowFaqCat2()
+    {
+      if(!isOpenFaq)
+      {
+        closeAllCat();
+        $("#faqDivCat2").css({"display":"block"});
+        isOpenFaq = true;
+      }
+      else
+      {
+        closeAllCat2();
+        isOpenFaq = false;
+      }
+    }
+
+     ///-------------- BY DETAIL -----------------------
+    //hide and show user setting
+    function onShowUserDet()
+    {
+      if(!isOpenUser)
+      {
+        closeAllDet();
+        $("#userDivDet").css({"display":"block"});
+        isOpenUser = true;
+      }
+      else
+      {
+        closeAllDet();
+        isOpenUser = false;
+      }
+    } 
+    
+    //hide and show shopincar
+    function onShowShopDet()
+    {
+      if(!isOpenShop)
+      {
+        closeAllDet();
+        $("#shopDivDet").css({"display":"block"});
+        isOpenShop = true;
+      }
+      else
+      {
+        closeAllDet();
+        isOpenShop = false;
+      }
+    }
+    
+    //hide and show faq
+    function onShowFaqDet()
+    {
+      if(!isOpenFaq)
+      {
+        closeAllDet();
+        $("#faqDivDet").css({"display":"block"});
+        isOpenFaq = true;
+      }
+      else
+      {
+        closeAllDet();
+        isOpenFaq = false;
+      }
+    }
+		
+		
+		
+		window.onload = function()
+		{
+			document.getElementById("userBtn").addEventListener ("click", onShowUser, false);
+			document.getElementById("shopBtn").addEventListener ("click", onShowShop, false);
+			document.getElementById("faqBtn").addEventListener ("click", onShowFaq, false);
+			
+			document.getElementById("userBtnCat").addEventListener ("click", onShowUserCat, false);
+			document.getElementById("shopBtnCat").addEventListener ("click", onShowShopCat, false);
+			document.getElementById("faqBtnCat").addEventListener ("click", onShowFaqCat, false);
+
+      		document.getElementById("userBtnCat2").addEventListener ("click", onShowUserCat2, false);
+      		document.getElementById("shopBtnCat2").addEventListener ("click", onShowShopCat2, false);
+      		document.getElementById("faqBtnCat2").addEventListener ("click", onShowFaqCat2, false);
+
+      		document.getElementById("userBtnDet").addEventListener ("click", onShowUserDet, false);
+      		document.getElementById("shopBtnDet").addEventListener ("click", onShowShopDet, false);
+      		document.getElementById("faqBtnDet").addEventListener ("click", onShowFaqDet, false);
+			
+			
+			/*
+			console.log("width: " + $("#page3").width());
+			
+			if( $("#page3").width() == 320)
+			{
+				console.log("Entro: " + $("#page3").height());
+				$("body").css({"height": $("#page3").height() })
+			}
+			*/
+			
+			callThisURL("http://houselab.co/nivelics/sanPablo/json/home.php?lan=es", "HOME");
+			callThisURL("http://houselab.co/nivelics/sanPablo/json/cart.php?idUser=5", "SHOP");
+		};
+		
+		
+		//POPULATE HOME
+		function finishHome(arrNews, arrFeatures)
+		{
+			for(var i=0;i<arrNews.length; i++)
+			{
+				var liObject = '<li><a href="#"><img src='+arrNews[i].img+' alt="img01"><figcaption><strong>'+arrNews[i].title+'</strong><br/>'+arrNews[i].editorial+'</figcaption></a></li>';
+				$('#listHomeFeatures').append(liObject);	
+			}
+			
+			for(var j=0;j<arrFeatures.length; j++)
+			{
+					
+			}
+			
+		}
+		
+		//POPULATE SHOPPING CART
+		function finishShop(arrShop)
+		{
+			console.log(arrShop);
+			for(var i=0;i<arrShop.length; i++)
+			{
+				var liObject = '<li><a href="#">'+arrShop[i].title+
+				'</a><br/><div class="info_compra">'+arrShop[i].theme+
+				'<span class="precios_carrito">'+arrShop[i].price+'</span></div><span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span></li>';
+				$('#shopList').append(liObject);
+				$('#shopList2').append(liObject);
+				$('#shopList3').append(liObject);	
+				$('#shopList4').append(liObject);
+			}
+		}
+		
+		
+		//CHANGE HEIGHT MIN
+		function onChange(myPage)
+		{
+			window.location.assign("index.html#"+myPage)	
+			actualPage = myPage;
+			console.log($("#"+ actualPage ).width())
+			
+				console.log("Entro: " + $("#"+ actualPage));
+				$("body").css({"min-height": $("#"+ actualPage).height() })
+			
+		}
+		
+		function setAlltoFalse()
+		{
+			isOpenUser 	= false;
+			isOpenShop 	= false;
+			isOpenFaq	= false;
+		}
+
+
+
+		function closeAll()
+		{
+			$("#userDiv").css({"display":"none"});
+			$("#shopDiv").css({"display":"none"});
+			$("#faqDiv").css({"display":"none"});
+			
+			setAlltoFalse();
+		}
+
+    function closeAllCat()
+    {
+      $("#userDivCat").css({"display":"none"});
+      $("#shopDivCat").css({"display":"none"});
+      $("#faqDivCat").css({"display":"none"});
+      
+      setAlltoFalse();
+    }
+
+    function closeAllCat2()
+    {
+      $("#userDivCat2").css({"display":"none"});
+      $("#shopDivCat2").css({"display":"none"});
+      $("#faqDivCat2").css({"display":"none"});
+      
+      setAlltoFalse();
+    }
+
+    function closeAllDet()
+    {
+      $("#userDivDet").css({"display":"none"});
+      $("#shopDivDet").css({"display":"none"});
+      $("#faqDivDet").css({"display":"none"});
+      
+      setAlltoFalse();
+    }
+	</script>
+    
+    
+    
+</head>
+
+<body>
+
+<!-----------------------Pagina----------------------->
+
+<div data-role="page" id="page" data-title="San Pablo - Language">
+    <section id="content_language">
+        <div class="container bg_red">
+            <section class="grid-ful box_language">
+                <div class="logo_white">
+                    <figure>
+                        <img src="images/logo_sanpablo_white.png">
+                    </figure>
+                </div>
+                <div data-role="fieldcontain" id="select_language_box">
+                  <label for="selectmenu" class="select"> </label>
+                  <select  onchange="onChange('page1')" class="btn_language" name="selectmenu" id="selectmenu">
+                    <option value="option1">Ingles</option>
+                    <option value="option2">Italiano</option>
+                    <option value="option3">Portugués</option>
+                    <option value="option4">Frances</option>
+                    <option value="option5">Polaco</option>
+                    <option value="option6">Alemán</option>
+                    <option value="index.html#page1">Japones</option>
+    
+                </select>
+              </div>
+           <div class="last_big"></div>
+
+           </section>
+      </div>
+    </section>
+</div>
+
+<!-----------------------Paginas REGISTRO----------------------->
+
+<div data-role="page" id="page1" data-title="San Pablo - Registro">
+    <section id="content_registro">
+        <div class="container bg_red">
+        	<div class="head_registro">
+            	    <figure>
+                        <img class="logo_color" src="images/logo_sanpablo_color.png">
+                    </figure>
+            </div>
+            <div class="btns_social">
+            	<section id="grid" class="clearfix">
+                    <div class="grid-full">
+                        <h2 class="sub-heading">Iniciar sesión con otros servicios</h2>
+                    </div>
+                    <div class="cf show-grid">
+                        <div class="row">
+                            <div class="grid-2 img_social"><a href="#"><img src="images/btn_google.png"></a></div>
+                            <div class="grid-2 img_social"><a href="·"><img src="images/btn_fb.png"></a></div>
+                            <div class="grid-2 img_social"><a href="#"><img src="images/btn_tw.png"></a></div>
+                        </div>
+                    </div>
+				</section>
+                
+            	<section id="grid_registro4" class="clearfix cuenta_paulus">
+                    <div class="grid-full">
+                        <h2 class="sub-heading">Ingrese con la su cuenta Paulus</h2>
+                    </div>
+                    <div class="cf show-grid">
+                        <div class="row">
+                            <div class="grid-full">
+                              <div data-role="fieldcontain">
+                                <input type="text" name="textinput" id="correo" value="" placeholder="E-mail"  />
+                              </div>
+                            </div>
+                            <div class="grid-full">
+                              <div data-role="fieldcontain">
+                                <input type="password" name="textinput" id="pass" value="" placeholder="Contraseña"  />
+                              </div>
+                            </div>
+                        
+				</section>
+                <div class="grid-full">
+                	<input name="Botón" type="button" class="btn_registro" value="Registrarse" onClick="onChange('page2')"/>
+                </div>
+            </div>
+            <div class="footer_registro"></div>
+      </div>
+    </section>
+</div>
+
+<div data-role="page" id="page2">
+    <section id="content_registro2">
+        <div class="container bg_red_registro bg_red">
+        	<div class="head_registro">
+            	    <figure>
+                        <img class="logo_color" src="images/logo_sanpablo_color.png">
+                    </figure>
+            </div>
+            <div class="grid-full">
+            	<h2 class="sub-heading">Registro</h2>
+            </div>
+            <div class="register_fields">
+            	<section id="grid_registro" class="clearfix">
+                    <div class="cf show-grid">
+                        <div class="row">
+                        <div class="box_form">
+                            <div class="grid-half">
+                              <div data-role="fieldcontain">
+                                <input class="big_field" type="text" name="textinput" id="correo" value="" placeholder="E-mail*"  />
+                              </div>
+                            </div>
+                            <div class="grid-half">
+                              <div data-role="fieldcontain">
+                                <input class="big_field" type="password" name="textinput" id="password" value="" placeholder="Contraseña*"  />
+                              </div>
+                            </div>
+                            <div class="grid-half">
+                              <div data-role="fieldcontain">
+                                <input class="big_field" type="password" name="textinput" id="password_confirm" value="" placeholder="Confirmar Contraseña*"  />
+                              </div>
+                            </div>
+                            <div class="grid-half">
+                              <div data-role="fieldcontain">
+                                <input class="big_field" type="text" name="textinput" id="country" value="" placeholder="País*"  />
+                              </div>
+                            </div>
+                            <div class="grid-half">
+                              <div data-role="fieldcontain">
+                                <input class="big_field" type="text" name="textinput" id="city" value="" placeholder="Ciudad/Departamento*"  />
+                              </div>
+                            </div>
+                            <section id="grid_registro2" class="clearfix politicas">
+                                <div class="grid-full">
+                                    <h3 class="sub-heading">Políticas y Condiciones</h3>
+                                </div>
+                                <div class="grid-full txt_politicas">
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscitng elit. Ut odio. Nam sed est. Nam a risus et est iaculis adipiscing. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer ut justo. In tincidunt viverra nisl. Donec dictum malesuada magna. Curabitur id nibh auctor tellus adipiscing pharetra. Fusce vel justo non orci semper feugiat. Cras eu leo at purus ultrices tristique.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut odio. Nam sed est. Nam a risus et est iaculis adipiscing. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer ut justo. In tincidunt viverra nisl. Donec dictum malesuada magna. Curabitur id nibh auctor tellus adipiscing pharetra. Fusce vel justo non orci semper feugiat. Cras eu leo at purus ultrices tristique.</p>
+                                </div>
+                            </section>
+                            </div>
+                            <div class="grid-full btns_registro">
+                                <div class="grid-half">
+                                    <input class="btn_registro" type="submit" value="Acepto" />
+                                </div>
+                                <div class="grid-half">
+                                    <a href="#page3"><input class="btn_registro" type="submit" value="Registrarse" /></a>
+                                </div>
+                            </div>
+                            <section id="grid_registro3" class="clearfix politicas">
+                                <div class="grid-full">
+                                    <h3 class="sub-heading">Desea recibir información de Paulus en:</h3>
+                                </div>
+                                <div class="grid-full mas_info">
+                                    <div class="grid-2">
+                                      <div data-role="fieldcontain">
+                                        <fieldset data-role="controlgroup">
+                                          <input type="checkbox" name="temas_biblicos" id="temas_biblicos" class="custom" value="" />
+                                          <label for="checkbox1_0">Temas Biblicos</label>
+                                          <br/>
+                                          <br/>
+                                          <input type="checkbox" name="familia" id="familia" class="custom" value="" />
+                                          <label for="checkbox1_1a">Familia</label>
+                                          <br/>
+                                          <br/>
+                                          <input type="checkbox" name="catequesis" id="catequesis" class="custom" value="" />
+                                          <label for="checkbox1_2">Catequesis</label>
+                                      </fieldset>
+                                    </div>                    	  
+                                    </div>
+                                    <div class="grid-2">
+                                      <div data-role="fieldcontain">
+                                        <fieldset data-role="controlgroup">
+                                          <input type="checkbox" name="comunicacion" id="comunicacion" class="custom" value="" />
+                                          <label for="checkbox1_0">Comunicación</label>
+                                          <br/>
+                                          <br/>
+                                          <input type="checkbox" name="teologia" id="teologia" class="custom" value="" />
+                                          <label for="checkbox1_1">Teología</label>
+                                          <br/>
+                                          <br/>
+                                          <input type="checkbox" name="filosofia" id="filosofia" class="custom" value="" />
+                                          <label for="checkbox1_2">Filosofía</label>
+                                      </fieldset>
+                                    </div>
+            
+                                    </div>
+                                    <div class="grid-2">
+                                      <div data-role="fieldcontain">
+                                        <fieldset data-role="controlgroup">
+                                          <input type="checkbox" name="temas_biblicos" id="temas_biblicos1" class="custom" value="" />
+                                          <label for="checkbox1_0">Temas Biblicos</label>
+                                          <br/>
+                                          <br/>
+                                          <input type="checkbox" name="familia" id="familia1" class="custom" value="" />
+                                          <label for="checkbox1_1">Familia</label>
+                                          <br/>
+                                          <br/>
+                                          <input type="checkbox" name="catequesis" id="catequesis1" class="custom" value="" />
+                                          <label for="checkbox1_2">Catequesis</label>
+                                      </fieldset>
+                                    </div>
+            
+                                    </div>
+                                    <div class="grid-2">
+                                      <div data-role="fieldcontain">
+                                        <fieldset data-role="controlgroup">
+                                          <input type="checkbox" name="superacion" id="superacion" class="custom" value="" />
+                                          <label for="checkbox1_0">Superación</label>
+                                          <br/>
+                                          <br/>
+                                          <input type="checkbox" name="pastoral" id="pastoral" class="custom" value="" />
+                                          <label for="checkbox1_1">Pastoral</label>
+                                          <br/>
+                                          <br/>
+                                          <input type="checkbox" name="todos" id="todos" class="custom" value="" />
+                                          <label for="checkbox1_2">Todos</label>
+                                      </fieldset>
+                                    </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+				</section>
+            </div>
+            <div class="last"></div>
+      </div>
+    </section>
+</div>
+
+
+<!-----------------------Pagina HOME----------------------->
+
+
+<div data-role="page" id="page3" data-title="San Pablo - Home">
+    <section id="content">
+        <div class="container">
+    	<header id="header_home">
+            	<div class="logo"><a href="#page"><img src="images/logo_sanpablo_color.png"></a></div>
+                <div id="menu">
+                	<ul id="menu_header">
+                          <li class="first_link_search">
+                          	<div id="search_tinny"><a class="search_peq" href="#"><img src="images/search_icon_48.jpg"></a></div> <!--BTN Search pequeno-->
+                          	<div id="search">
+                            <div data-role="fieldcontain" class="search">
+                              <input class="search_home_1024" type="search" name="" id="searchinput1" value="" placeholder="Buscar"  />
+                            </div>
+                            </div> <!--Search grande-->
+                  </li>
+                        <li class="second_link_sesion"><a class="inicio" href="#"><img id="userBtn" src="images/sesion_icon_48.jpg"/></a></li>
+                        <li><a class="btn_shop" href="#"><img id="shopBtn" src="images/shop_icon_48.jpg"></a></li>
+                        <li><a class="btn_library" href="#page8"><img src="images/library_icon_48.jpg"></a></li>
+                        <li><a class="btn_faq" href="#"><img id="faqBtn" src="images/FAQ_icon_48.jpg"></a></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="search_drop">
+            	<input class="field_search_tinny" name="" id="buscar" value="" placeholder="Buscar" type="search"> <a id="btn_search" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Buscar</a>
+            </div> <!--Search Drop-->
+            <div id="userDiv" class="sesion_drop grid-full">
+                <div class="gray_pointer sesion_pointer"></div>
+           		<div class="txt_sesion"><a onClick="onChange('page4')">Iniciar sesión</a> | <a href="#">Registrarse</a></div>
+            </div> <!--Sesion Drop-->
+            <div id="shopDiv" class="carro_drop grid-full">
+                <div class="gray_pointer carrito_pointer"></div>
+           		<div class="productos grid-full">
+                	Productos en mi carrito
+                    <br/>
+                    <div class="compras">
+                        <ul id="shopList" class="lista_compras">
+                            <li>
+                            	<a href="#">Para salvarte</a>
+                                <br/>
+                                <div class="info_compra">Temas Públicos<span class="precios_carrito">Precio: $20.000</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                            <li>
+                            	<a href="#">Juventud sin limites</a>
+                                <br/>
+                                <div class="info_compra">Familia<span class="precios_carrito">Precio: Gratis</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                            <li>
+                            	<a href="#">El habitus en la comunicación</a>
+                                <br/>
+                                <div class="info_compra">Reflexión<span class="precios_carrito"><span class="promo_carrito">Precio: $20.000</span> Promoción: $15.000</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                        </ul>
+					</div>
+                    <div class="btns_carrito">
+                    	<a id="btn_fin" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Finalizar Compra</a>
+                    	<a id="btn_ver" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Ver Carrito</a>
+                    </div>
+                </div>
+            </div> <!--Carrito Drop-->
+            <div id="faqDiv" class="howto_drop grid-full">
+                <div class="gray_pointer howto_pointer"></div>
+           		<div class="productos grid-full" id="slider">
+                            <p class='text_howto'>
+                           Cómo navegar Paulus
+                           </p>
+                           <p class='text_howto1'>
+                           Librería/Iconos de navegación
+                           </p>
+                           <div id='box_howto' class='clearfixf'>
+                               <p class='text_howto2'>
+                               Buscador
+                               </p>
+                               <div id='box_howto1' class='clearfix'>
+                                   <img class='image_howto image' src='images/howto_search_icon.png' />
+                               </div>
+                               <div id='box_howto2' class='clearfix'>
+                                   <img class='image_howto1 image' src='images/howto_search1.png' />
+                               </div>
+                               <div id='box_howto_1' class='clearfix'>
+                                   <img class='image_howto2 image' src='images/howto_search2.png' />
+                               </div>
+                               <p class='text_howto3'>
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In<br />
+                               </p>
+                           </div>
+                           <div id='box_howto3' class='clearfix'>
+                               <div id='box_howto4' class='clearfix'>
+                                   <img class='image_howto3 image' src='images/howto_perfil.png' />
+                               </div>
+                               <p class='text_howto4'>
+                               Perfil
+                               </p>
+                               <p class='text_howto5'>
+                               vulputate risus at, sodales sapien. Vivamus viverra sollicitudin convallis. Aenean sed purus felis. Quisque placerat<br />
+                               </p>
+                               <div id='box_howto5' class='clearfix'>
+                                   <img class='image_howto4 image' src='images/howto_perfil_icon.png' />
+                               </div>
+                           </div>
+                           <div id='box_howto6' class='clearfix'>
+                               <p class='text_howto6'>
+                               Carrito
+                               </p>
+                               <div id='box_howto7' class='clearfix'>
+                                   <img class='image_howto5 image' src='images/howto_search_icon.png' />
+                               </div>
+                               <div id='box_howto8' class='clearfix'>
+                                   <img class='image_howto6 image' src='images/howto_perfil2.png' />
+                               </div>
+                               <div id='box_howto9' class='clearfix'>
+                                   <img class='image_howto7 image' src='images/howto_carrito1.png' />
+                               </div>
+                               <p class='text_howto7'>
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In<br />
+                               </p>
+                           </div>
+                           <div id="pagers_howto"></div>
+                </div>
+            </div> <!--Instrucciones Drop-->
+            <div class="banner"><img src="images/banner_480.jpg"></div>
+<section>
+            	<div class="slider_categorias">
+                	<div id="mi-slider" class="mi-slider">
+                        <nav>
+                        	<div class="red_pointer red_pointer_position"></div>
+                            <a class="first_link" href="#">Novedades</a>
+                            <a href="#">Categorias</a>
+                            <a href="#">Audiolibros</a>
+                            <a class="categoria_musica" href="#">Música</a>
+                            <a href="#"><img src="images/mas.png"></a>
+                        </nav>
+                        <ul id="listHomeFeatures" class="books_novedades">
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li>
+                    </div>
+                </div>
+            </section>
+            <section>
+            	<div class="banner_categorias gallery cf">
+                	<img src="images/banner_categorias_1.png" class="grid-unit">
+                	<img src="images/banner_categorias_2.png" class="grid-unit">
+                    <img src="images/banner_categorias_3.png" class="grid-unit">
+                    <img src="images/banner_categorias_4.png" class="grid-unit">
+                </div>
+            </section>
+            <div data-role="footer" class="nav_bottom">
+                <nav>
+                    <a href="#">Categorias</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Promociones</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Destacado</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Autores</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Comprados </a>
+                </nav>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-----------------------Pagina PERFIL----------------------->
+
+
+    <div data-role="page" id="page4" data-title="San Pablo - Perfil">
+        <div id="primaryContainer" class="primaryContainer clearfix">
+                   <img id='perfil_image' src='images/logo_sanpablo_color.png' class='image' />
+           <img id='perfil_image1' src='images/bg_perfil.jpg' class='image' />
+           <div id='perfil_box' class='clearfix'>
+               <p id='perfil_text'>
+               <span id='perfil_textspan'>Mi Perfil</span><br />
+               </p>
+               <img id='perfil_image2' src='images/logo_sanpablo_white.png' class='image' />
+               <div id='perfil_box1' class='clearfix'>
+                   <img id='perfil_image3' src='images/img_perfil.png' class='image' />
+               </div>
+           </div>
+           <div id='perfil_fields' class='clearfix'>
+              <ul class="lista_perfil">
+                  <li>
+                      <a href="#">Arnoby Alvarez Charry</a>
+                      <span class="edit_btn"><a href="#">Editar</a></span>
+                  </li>
+                  <li>
+                      <a href="#">arnobyalvarez@sanpablo.com.co</a>
+                      <span class="edit_btn"><a href="#">Editar</a></span>
+                  </li>
+                  <li>
+                      <a href="#">Password: **********</a>
+                      <span class="edit_btn"><a href="#">Editar</a></span>
+                  </li>
+                  <li>
+                      <a href="#">Español</a>
+                      <span class="edit_btn"><a href="#">Editar</a></span>
+                  </li>
+              </ul>
+           </div>
+           <div data-role="footer" class="nav_bottom footer_perfil">
+                <nav>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a onClick="onChange('page5')">Libreria</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Mi biblioteca</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Lista de deseos</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#"><img src="images/mas_peq.png"  alt=""/></a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                </nav>
+            </div>
+        </div>
+    </div>
+    
+<!-----------------------Pagina CATEGORIA----------------------->
+
+<div data-role="page" id="page5" data-title="San Pablo - Categoria">
+	<div id="primaryContainer" class="primaryContainer clearfix">
+    	<header id="header_home">
+            	<div class="logo"><a href="#page"><img src="images/logo_sanpablo_color.png"></a></div>
+                <div id="menu">
+                	<ul id="menu_header">
+                          <li class="first_link_search">
+                          	<div id="search_tinny"><a class="search_peq" href="#"><img src="images/search_icon_48.jpg"></a></div> <!--BTN Search pequeno-->
+                          	<div id="search">
+                            <div data-role="fieldcontain" class="search">
+                              <input class="search_home_1024" type="search" name="" id="searchinput1" value="" placeholder="Buscar"  />
+                            </div>
+                            </div> <!--Search grande-->
+                  </li>
+                        <li class="second_link_sesion"><a class="inicio" href="#"><img id="userBtnCat2" src="images/sesion_icon_48.jpg"></a></li>
+                        <li><a class="btn_shop" href="#"><img id="shopBtnCat2" src="images/shop_icon_48.jpg"></a></li>
+                        <li><a class="btn_library" href="#page8"><img src="images/library_icon_48.jpg"></a></li>
+                        <li><a class="btn_faq" href="#"><img id="faqBtnCat2" src="images/FAQ_icon_48.jpg"></a></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="search_drop">
+            	<input class="field_search_tinny" name="" id="buscar" value="" placeholder="Buscar" type="search"> <a id="btn_search" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Buscar</a>
+            </div> <!--Search Drop-->
+            <div id="userDivCat2" class="sesion_drop grid-full">
+                <div class="gray_pointer sesion_pointer"></div>
+           		<div class="txt_sesion"><a href="#">Iniciar sesión</a> | <a href="#">Registrarse</a></div>
+            </div> <!--Sesion Drop-->
+            <div id="shopDivCat2" class="carro_drop grid-full">
+                <div class="gray_pointer carrito_pointer"></div>
+           		<div class="productos grid-full">
+                	Productos en mi carrito
+                    <br/>
+                    <div class="compras">
+                        <ul id="shopList2" class="lista_compras">
+                            <li>
+                            	<a href="#">Para salvarte</a>
+                                <br/>
+                                <div class="info_compra">Temas Públicos<span class="precios_carrito">Precio: $20.000</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                            <li>
+                            	<a href="#">Juventud sin limites</a>
+                                <br/>
+                                <div class="info_compra">Familia<span class="precios_carrito">Precio: Gratis</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                            <li>
+                            	<a href="#">El habitus en la comunicación</a>
+                                <br/>
+                                <div class="info_compra">Reflexión<span class="precios_carrito"><span class="promo_carrito">Precio: $20.000</span> Promoción: $15.000</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                        </ul>
+					</div>
+                    <div class="btns_carrito">
+                    	<a id="btn_fin" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Finalizar Compra</a>
+                    	<a id="btn_ver" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Ver Carrito</a>
+                    </div>
+                </div>
+            </div> <!--Carrito Drop-->
+            <div id="faqDivCat2" class="howto_drop grid-full">
+                <div class="gray_pointer howto_pointer"></div>
+           		<div class="productos grid-full" id="slider">
+                            <p class='text_howto'>
+                           Cómo navegar Paulus
+                           </p>
+                           <p class='text_howto1'>
+                           Librería/Iconos de navegación
+                           </p>
+                           <div id='box_howto' class='clearfix'>
+                               <p class='text_howto2'>
+                               Buscador
+                               </p>
+                               <div id='box_howto1' class='clearfix'>
+                                   <img class='image_howto image' src='images/howto_search_icon.png' />
+                               </div>
+                               <div id='box_howto2' class='clearfix'>
+                                   <img class='image_howto1 image' src='images/howto_search1.png' />
+                               </div>
+                               <div id='box_howto_1' class='clearfix'>
+                                   <img class='image_howto2 image' src='images/howto_search2.png' />
+                               </div>
+                               <p class='text_howto3'>
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In<br />
+                               </p>
+                           </div>
+                           <div id='box_howto3' class='clearfix'>
+                               <div id='box_howto4' class='clearfix'>
+                                   <img class='image_howto3 image' src='images/howto_perfil.png' />
+                               </div>
+                               <p class='text_howto4'>
+                               Perfil
+                               </p>
+                               <p class='text_howto5'>
+                               vulputate risus at, sodales sapien. Vivamus viverra sollicitudin convallis. Aenean sed purus felis. Quisque placerat<br />
+                               </p>
+                               <div id='box_howto5' class='clearfix'>
+                                   <img class='image_howto4 image' src='images/howto_perfil_icon.png' />
+                               </div>
+                           </div>
+                           <div id='box_howto6' class='clearfix'>
+                               <p class='text_howto6'>
+                               Carrito
+                               </p>
+                               <div id='box_howto7' class='clearfix'>
+                                   <img class='image_howto5 image' src='images/howto_search_icon.png' />
+                               </div>
+                               <div id='box_howto8' class='clearfix'>
+                                   <img class='image_howto6 image' src='images/howto_perfil2.png' />
+                               </div>
+                               <div id='box_howto9' class='clearfix'>
+                                   <img class='image_howto7 image' src='images/howto_carrito1.png' />
+                               </div>
+                               <p class='text_howto7'>
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In<br />
+                               </p>
+                           </div>
+                           <div id="pagers_howto"></div>
+                </div>
+            </div> <!--Instrucciones Drop-->
+               <img id='categoria_image' src='images/banner_categoria.jpg' class='image' />
+       <div id='categoria_box' class='clearfix'>
+           <p id='categoria_text'>
+           Familia
+           </p>
+           <div id='categoria_box1' class='clearfix'>
+               <img id='categoria_image1' src='images/spliter_red.png' class='image' />
+           </div>
+           <div id='categoria_box2' class='clearfix'>
+               <img id='categoria_image2' src='images/mas_peq.png' class='image' />
+           </div>
+       </div>
+       <div id='categoria_box3' class='clearfix'>
+           <div id='categoria_box4' class='clearfix'>
+               <p id='categoria_text1'>
+               Niños<br />
+               </p>
+               <div id='categoria_box5' class='clearfix'>
+               </div>
+           </div>
+           <div id="categoria" class='clearfix listcategory'>
+           	<ul>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                </ul>
+           </div>
+           <div id='categoria_box7' class='clearfix'>
+               <p id='categoria_text2'>
+               Adolescentes<br />
+               </p>
+               <div id='categoria_box8' class='clearfix'>
+               </div>
+           </div>
+           <div id='categoria' class='clearfix listcategory'>
+           	<ul>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                </ul>
+           </div>
+           <div id='categoria_box10' class='clearfix'>
+               <p id='categoria_text3'>
+               Destacados<br />
+               </p>
+               <div id='categoria_box11' class='clearfix'>
+               </div>
+           </div>
+           <div id='categoria' class='clearfix gallery cf'>
+           	<img src="images/destacado1.png"  alt=""/>
+            	<img src="images/destacado2.png"  alt=""/>
+           </div>
+           <div id='categoria_box13' class='clearfix'>
+               <p id='categoria_text4'>
+               Escuela de padres<br />
+               </p>
+               <div id='categoria_box14' class='clearfix'>
+               </div>
+           </div>
+           <div id='categoria' class='clearfix listcategory'>
+           	<ul>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                </ul>
+           </div>
+           <div id='categoria_box16' class='clearfix'>
+               <p id='categoria_text5'>
+               Tercera edad<br />
+               </p>
+               <div id='categoria_box17' class='clearfix'>
+               </div>
+           </div>
+           <div id='categoria' class='clearfix listcategory'>
+           	<ul>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                </ul>
+           </div>
+       </div>
+       <div id='mas_categorias' class='clearfix'>
+           <p id='text_mas'>
+           <a href="#">más...</a><br />
+           </p>
+       </div>
+       
+       <div data-role="footer" class="nav_bottom">
+                <nav>
+                    <a onClick="onChange('page6')">Categorias</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Promociones</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Destacado</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Autores</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Comprados </a>
+                </nav>
+            </div>
+	</div>
+</div>
+
+<!-----------------------Pagina CATEGORIAS----------------------->
+
+<div data-role="page" id="page6" data-title="San Pablo - Categorias">
+	<div id="primaryContainer" class="primaryContainer clearfix">
+    	<header id="header_home">
+            	<div class="logo"><a href="#page"><img src="images/logo_sanpablo_color.png"></a></div>
+                <div id="menu">
+                	<ul id="menu_header">
+                          <li class="first_link_search">
+                          	<div id="search_tinny"><a class="search_peq" href="#"><img src="images/search_icon_48.jpg"></a></div> <!--BTN Search pequeno-->
+                          	<div id="search">
+                            <div data-role="fieldcontain" class="search">
+                              <input class="search_home_1024" type="search" name="" id="searchinput1" value="" placeholder="Buscar"  />
+                            </div>
+                            </div> <!--Search grande-->
+                  </li>
+                        <li class="second_link_sesion"><a class="inicio" href="#"><img id="userBtnCat" src="images/sesion_icon_48.jpg"></a></li>
+                        <li><a class="btn_shop" href="#"><img id="shopBtnCat" src="images/shop_icon_48.jpg"></a></li>
+                        <li><a class="btn_library" href="#page8"><img src="images/library_icon_48.jpg"></a></li>
+                        <li><a class="btn_faq" href="#"><img id="faqBtnCat" src="images/FAQ_icon_48.jpg"></a></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="search_drop">
+            	<input class="field_search_tinny" name="" id="buscar" value="" placeholder="Buscar" type="search"> <a id="btn_search" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Buscar</a>
+            </div> <!--Search Drop-->
+            <div id="userDivCat" class="sesion_drop grid-full">
+                <div class="gray_pointer sesion_pointer"></div>
+           		<div  class="txt_sesion"><a href="#">Iniciar sesión</a> | <a href="#">Registrarse</a></div>
+            </div> <!--Sesion Drop-->
+            <div id="shopDivCat" class="carro_drop grid-full">
+                <div class="gray_pointer carrito_pointer"></div>
+           		<div class="productos grid-full">
+                	Productos en mi carrito
+                    <br/>
+                    <div class="compras">
+                        <ul id="shopList3" class="lista_compras">
+                            <li>
+                            	<a href="#">Para salvarte</a>
+                                <br/>
+                                <div class="info_compra">Temas Públicos<span class="precios_carrito">Precio: $20.000</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                            <li>
+                            	<a href="#">Juventud sin limites</a>
+                                <br/>
+                                <div class="info_compra">Familia<span class="precios_carrito">Precio: Gratis</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                            <li>
+                            	<a href="#">El habitus en la comunicación</a>
+                                <br/>
+                                <div class="info_compra">Reflexión<span class="precios_carrito"><span class="promo_carrito">Precio: $20.000</span> Promoción: $15.000</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                        </ul>
+					</div>
+                    <div class="btns_carrito">
+                    	<a id="btn_fin" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Finalizar Compra</a>
+                    	<a id="btn_ver" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Ver Carrito</a>
+                    </div>
+                </div>
+            </div> <!--Carrito Drop-->
+            <div id="faqDivCat" class="howto_drop grid-full">
+                <div class="gray_pointer howto_pointer"></div>
+           		<div class="productos grid-full" id="slider">
+                            <p class='text_howto'>
+                           Cómo navegar Paulus
+                           </p>
+                           <p class='text_howto1'>
+                           Librería/Iconos de navegación
+                           </p>
+                           <div id='box_howto' class='clearfix'>
+                               <p class='text_howto2'>
+                               Buscador
+                               </p>
+                               <div id='box_howto1' class='clearfix'>
+                                   <img class='image_howto image' src='images/howto_search_icon.png' />
+                               </div>
+                               <div id='box_howto2' class='clearfix'>
+                                   <img class='image_howto1 image' src='images/howto_search1.png' />
+                               </div>
+                               <div id='box_howto_1' class='clearfix'>
+                                   <img class='image_howto2 image' src='images/howto_search2.png' />
+                               </div>
+                               <p class='text_howto3'>
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In<br />
+                               </p>
+                           </div>
+                           <div id='box_howto3' class='clearfix'>
+                               <div id='box_howto4' class='clearfix'>
+                                   <img class='image_howto3 image' src='images/howto_perfil.png' />
+                               </div>
+                               <p class='text_howto4'>
+                               Perfil
+                               </p>
+                               <p class='text_howto5'>
+                               vulputate risus at, sodales sapien. Vivamus viverra sollicitudin convallis. Aenean sed purus felis. Quisque placerat<br />
+                               </p>
+                               <div id='box_howto5' class='clearfix'>
+                                   <img class='image_howto4 image' src='images/howto_perfil_icon.png' />
+                               </div>
+                           </div>
+                           <div id='box_howto6' class='clearfix'>
+                               <p class='text_howto6'>
+                               Carrito
+                               </p>
+                               <div id='box_howto7' class='clearfix'>
+                                   <img class='image_howto5 image' src='images/howto_search_icon.png' />
+                               </div>
+                               <div id='box_howto8' class='clearfix'>
+                                   <img class='image_howto6 image' src='images/howto_perfil2.png' />
+                               </div>
+                               <div id='box_howto9' class='clearfix'>
+                                   <img class='image_howto7 image' src='images/howto_carrito1.png' />
+                               </div>
+                               <p class='text_howto7'>
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In<br />
+                               </p>
+                           </div>
+                           <div id="pagers_howto"></div>
+                </div>
+            </div> <!--Instrucciones Drop-->
+       <div id='categorias_box1' class='clearfix'>
+           <p id='categorias_text'>
+           Libros
+           </p>
+           <div id='categorias_box2' class='clearfix'>
+               <img id='categorias_image' src='images/spliter_red.png' class='image' />
+           </div>
+           <div id='categorias_box3' class='clearfix'>
+               <img id='categorias_image1' src='images/mas_peq.png' class='image' />
+           </div>
+       </div>
+       <div id='container_categorias_list' class='clearfix'>
+          <ul class="lista_categorias">
+              <li>
+              	<a onClick="onChange('page7')"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li class="li_gray">
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li>
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li class="li_gray">
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li>
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li class="li_gray">
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li>
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li class="li_gray">
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li>
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+              <li class="li_gray">
+              	<a href="#"><img src="images/img_categorias1.png"></a>
+                	<div class="txt_categorias">
+                      <a href="#">Biblia</a>
+                      <br/>
+                      <span class="No_libros">10 Libros</span>
+                  </div>
+              </li>
+          </ul>
+       </div>
+       <div id='mas_categorias' class='clearfix'>
+           <p id='categorias_text1'>
+           <a href="#">más...</a><br />
+           </p>
+       </div>
+       
+       <div data-role="footer" class="nav_bottom">
+                <nav>
+                    <a href="#">Categorias</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Promociones</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Destacado</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Autores</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Comprados </a>
+                </nav>
+            </div>
+	</div>
+</div>
+
+<!-----------------------Pagina DETALLE----------------------->
+
+<div data-role="page" id="page7" data-title="San Pablo - Detalle">
+	<div id="primaryContainer" class="primaryContainer clearfix">
+    	<header id="header_home">
+            	<div class="logo"><a href="#page"><img src="images/logo_sanpablo_color.png"></a></div>
+                <div id="menu">
+                	<ul id="menu_header">
+                          <li class="first_link_search">
+                          	<div id="search_tinny"><a class="search_peq" href="#"><img src="images/search_icon_48.jpg"></a></div> <!--BTN Search pequeno-->
+                          	<div id="search">
+                            <div data-role="fieldcontain" class="search">
+                              <input class="search_home_1024" type="search" name="" id="searchinput1" value="" placeholder="Buscar"  />
+                            </div>
+                            </div> <!--Search grande-->
+                  </li>
+                        <li class="second_link_sesion"><a class="inicio" href="#"><img id="userBtnDet" src="images/sesion_icon_48.jpg"></a></li>
+                        <li><a class="btn_shop" href="#"><img id="shopBtnDet" src="images/shop_icon_48.jpg"></a></li>
+                        <li><a class="btn_library" href="#page8"><img src="images/library_icon_48.jpg"></a></li>
+                        <li><a class="btn_faq" href="#"><img id="faqBtnDet" src="images/FAQ_icon_48.jpg"></a></li>
+                    </ul>
+                </div>
+            </header>
+            <div class="search_drop">
+            	<input class="field_search_tinny" name="" id="buscar" value="" placeholder="Buscar" type="search"> <a id="btn_search" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Buscar</a>
+            </div> <!--Search Drop-->
+            <div id="userDivDet" class="sesion_drop grid-full">
+                <div class="gray_pointer sesion_pointer"></div>
+           		<div class="txt_sesion"><a href="#">Iniciar sesión</a> | <a href="#">Registrarse</a></div>
+            </div> <!--Sesion Drop-->
+            <div id="shopDivDet" class="carro_drop grid-full">
+                <div class="gray_pointer carrito_pointer"></div>
+           		<div class="productos grid-full">
+                	Productos en mi carrito
+                    <br/>
+                    <div class="compras">
+                        <ul id="shopList4" class="lista_compras">
+                            <li>
+                            	<a href="#">Para salvarte</a>
+                                <br/>
+                                <div class="info_compra">Temas Públicos<span class="precios_carrito">Precio: $20.000</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                            <li>
+                            	<a href="#">Juventud sin limites</a>
+                                <br/>
+                                <div class="info_compra">Familia<span class="precios_carrito">Precio: Gratis</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                            <li>
+                            	<a href="#">El habitus en la comunicación</a>
+                                <br/>
+                                <div class="info_compra">Reflexión<span class="precios_carrito"><span class="promo_carrito">Precio: $20.000</span> Promoción: $15.000</span></div>
+                                <span class="trash_icon"><a href="#"><img src="images/trash_icon.jpg"></a></span>
+                            </li>
+                        </ul>
+					</div>
+                    <div class="btns_carrito">
+                    	<a id="btn_fin" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Finalizar Compra</a>
+                    	<a id="btn_ver" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Ver Carrito</a>
+                    </div>
+                </div>
+            </div> <!--Carrito Drop-->
+            <div id="faqDivDet" class="howto_drop grid-full">
+                <div class="gray_pointer howto_pointer"></div>
+           		<div class="productos grid-full" id="slider">
+                            <p class='text_howto'>
+                           Cómo navegar Paulus
+                           </p>
+                           <p class='text_howto1'>
+                           Librería/Iconos de navegación
+                           </p>
+                           <div id='box_howto' class='clearfix'>
+                               <p class='text_howto2'>
+                               Buscador
+                               </p>
+                               <div id='box_howto1' class='clearfix'>
+                                   <img class='image_howto image' src='images/howto_search_icon.png' />
+                               </div>
+                               <div id='box_howto2' class='clearfix'>
+                                   <img class='image_howto1 image' src='images/howto_search1.png' />
+                               </div>
+                               <div id='box_howto_1' class='clearfix'>
+                                   <img class='image_howto2 image' src='images/howto_search2.png' />
+                               </div>
+                               <p class='text_howto3'>
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In<br />
+                               </p>
+                           </div>
+                           <div id='box_howto3' class='clearfix'>
+                               <div id='box_howto4' class='clearfix'>
+                                   <img class='image_howto3 image' src='images/howto_perfil.png' />
+                               </div>
+                               <p class='text_howto4'>
+                               Perfil
+                               </p>
+                               <p class='text_howto5'>
+                               vulputate risus at, sodales sapien. Vivamus viverra sollicitudin convallis. Aenean sed purus felis. Quisque placerat<br />
+                               </p>
+                               <div id='box_howto5' class='clearfix'>
+                                   <img class='image_howto4 image' src='images/howto_perfil_icon.png' />
+                               </div>
+                           </div>
+                           <div id='box_howto6' class='clearfix'>
+                               <p class='text_howto6'>
+                               Carrito
+                               </p>
+                               <div id='box_howto7' class='clearfix'>
+                                   <img class='image_howto5 image' src='images/howto_search_icon.png' />
+                               </div>
+                               <div id='box_howto8' class='clearfix'>
+                                   <img class='image_howto6 image' src='images/howto_perfil2.png' />
+                               </div>
+                               <div id='box_howto9' class='clearfix'>
+                                   <img class='image_howto7 image' src='images/howto_carrito1.png' />
+                               </div>
+                               <p class='text_howto7'>
+                               Lorem ipsum dolor sit amet, consectetur adipiscing elit. In<br />
+                               </p>
+                           </div>
+                           <div id="pagers_howto"></div>
+                </div>
+            </div> <!--Instrucciones Drop-->
+            
+       <div id='subHeader' class='clearfix'>
+           <p id='detalle_text'>
+           Temas Biblicos
+           </p>
+           <div id='detalle_icons' class='clearfix'>
+               <img id='detalle_fav' src='images/star.png' class='image' />
+               <img id='detalle_split' src='images/spliter_black.png' class='image' />
+               <img id='detalle_image' src='images/spliter_white.png' class='image' />
+               <img id='detalle_add' src="images/mas_peq.png" class='image' />
+           </div>
+       </div>
+       <img id='book' src='images/bigBook.png' class='image' />
+       <div id='detalle_info' class='clearfix'>
+           <p id='detalle_text1'>
+           Titulo
+           </p>
+           <p id='detalle_text2'>
+           Autor Nombre largo
+           </p>
+           <p id='detalle_text3'>
+           Valoración genral
+           </p>
+           <div id='value' class='clearfix'>
+               <img id='detalle_image1' src='images/starPoints.png' class='image' />
+               <img id='detalle_image2' src='images/starPoints.png' class='image' />
+               <img id='detalle_image3' src='images/starPoints.png' class='image' />
+               <img id='detalle_image4' src='images/starPoints.png' class='image' />
+               <img id='detalle_image5' src='images/starPoints.png' class='image' />
+           </div>
+           <p id='detalle_text4'>
+           Precio<br /><span id='detalle_textspan'>$20.000</span>
+           </p>
+       </div>
+       <img id='detalle_btnComprar' src='images/btnComprar.jpg' class='image' />
+       <img id='detalle_btnMuestra' src='images/btnMuestra.jpg' class='image' />
+       <div id='tab_detalle' class='clearfix'>
+       
+       		<ul class="tabs">
+                <li class="active"><a href="#">Sinopsis</a></li>
+                <li><a href="#">Detalles</a></li>
+                <li><a href="#">Valoración</a></li>
+                <li><a href="#">Opinión</a></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="tabs_content">
+            <div>Es el mejor compendio de lo que todo cristiano debe saber para esta vida y la eterna, en un lenguaje sencillo, fácil de entender.
+Está continuamente renovándose: desde las nuevas corrientes sobre el origen del cosmos hasta la clonación, siempre desde el punto de vista católico, siguiendo el Magisterio de la Iglesia.
+Basta echar una mirada al índice general para observar que nada escapa a la visión católica del ser humano y de la fe y la vida cristianas: comienza por Dios (origen del cosmos, de la vida y del hombre y las perfecciones de Dios, el misterio de la Trinidad), la Encarnación (Jesucristo, María, José), la Redención, la Iglesia, la vida sobrenatural (la gracia, el pecado original, la oración), el sacramento de la Penitencia (pecad o, mandamientos, partes de la confesión), los sacramentos del Bautismo, la Confirmación, el Orden sacerdotal, el Matrimonio (sacramento, divorcio, adulterio, armonía conyugal, cariño matrimonial, procreación de los hijos, planificación familiar), el Más allá (infierno, cielo, purgatorio).
+Sigue a todo esto un Apéndice, en el que se ofrecen normas prácticas para la confesión, un oracional selecto, los libros recomendados y buenos índices de materias y de nombres. ¡Un libro imprescindible!</div>
+
+            <div>
+            	<br/>
+               <br/>
+            	<strong class="bold">Idioma:</strong> Español <br/> <br/>
+               <strong class="bold">Colección:</strong> Temas Bíblicos <br/> <br/>
+               <strong class="bold">Editorial:</strong> San Pablo Colombia <br/> <br/>
+               <strong class="bold">Páginas Impresas:</strong> 250 páginas <br/> <br/>
+              <strong class="bold">Tamaño:</strong> 7.5 megas
+            </div>
+            
+            <div id="valoracion">
+            	<ul>
+                <li>
+            		<div class="grid-4">
+                      <p class="comment_date">dd/mm/aaaa</p>
+                      <p class="comment_name bold">Pablo Maria Bolivar</p>
+                      <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque et est eu feugiat. Nulla fermentum aliquam justo, eget pellentesque elit consectetur eu.</p>
+                  </div>
+               <div class="grid-2">
+               	Valoración:
+                	<br/>
+                    <br/>
+                   <img id='star1' src='images/starPoints.png' class='image' />
+                   <img id='star2' src='images/starPoints.png' class='image' />
+                   <img id='star3' src='images/starPoints.png' class='image' />
+                   <img id='star4' src='images/starPoints.png' class='image' />
+                   <img id='star5' src='images/starPoints.png' class='image' />
+               </div>
+                </li>
+                <li>
+            		<div class="grid-4">
+                      <p class="comment_date">dd/mm/aaaa</p>
+                      <p class="comment_name bold">Pablo Maria Bolivar</p>
+                      <p class="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque et est eu feugiat. Nulla fermentum aliquam justo, eget pellentesque elit consectetur eu.</p>
+                  </div>
+               <div class="grid-2">
+               	Valoración:
+                	<br/>
+                    <br/>
+                   <img id='star1' src='images/starPoints.png' class='image' />
+                   <img id='star2' src='images/starPoints.png' class='image' />
+                   <img id='star3' src='images/starPoints.png' class='image' />
+                   <img id='star4' src='images/starPoints.png' class='image' />
+                   <img id='star5' src='images/starPoints.png' class='image' />
+               </div>
+                </li>
+                </ul>
+            </div>
+            
+            <div>
+            
+                <div id='form_opinion_box' class='clearfix'>
+                   <p id='form_opinion_text'>
+                   *Nombre:
+                   </p>
+                   <div id='form_opinion_box1' class='clearfix'>
+                     <div data-role="fieldcontain">
+                       <input type="text" name="textinput" id="opinion_name" value=""  />
+                     </div>
+                   </div>
+                   <p id='form_opinion_text1'>
+                   *E-mail:
+                   </p>
+                   <div id='form_opinion_box2' class='clearfix'>
+                     <div data-role="fieldcontain">
+                       <input type="text" name="textinput" id="opinion_mail" value=""  />
+                     </div>
+                   </div>
+                   <div id='form_opinion_box3' class='clearfix'>
+                   *Valoración
+                   <br/>
+                       <div class="grid-full">
+                           <img id='star1' src='images/starPoints.png' class='image' />
+                           <img id='star2' src='images/starPoints.png' class='image' />
+                           <img id='star3' src='images/starPoints.png' class='image' />
+                           <img id='star4' src='images/starPoints.png' class='image' />
+                           <img id='star5' src='images/starPoints.png' class='image' />
+                       </div>
+                   </div>
+               </div>
+               <div id='form_opinion_box4' class='clearfix'>
+                   <p id='form_opinion_text2'>
+                   *Déjanos aquí tu opinión
+                   </p>
+                   <div id='form_opinion_box5' class='clearfix'>
+                     <div data-role="fieldcontain">
+                       <textarea cols="40" rows="8" name="textarea" id="opinion_area"></textarea>
+                     </div>
+                   	
+                   </div>
+                   <div id='form_opinion_box6' class='clearfix'>
+                   </div>
+               </div>
+        
+            </div>
+            
+            </div>
+            
+            </div>
+            
+            <!-- contenido pestañas-->
+            
+       <div id='detalle_slider' class='clearfix'>
+           <div id="detalle_categoria" class='clearfix listcategory'>
+           	<ul>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <br/>
+                            Editorial San Pablo</figcaption></a></li>
+                </ul>
+           </div>
+           <div id='titleSlider' class='clearfix'>
+           </div>
+       </div>
+                        
+      </div>
+       <div data-role="footer" class="nav_bottom">
+                <nav>
+                    <a href="#">Categorias</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Promociones</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Destacado</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Autores</a>
+                    <img class="spliterb" src="images/spliter_black.png">
+                    <a href="#">Comprados </a>
+                </nav>
+            </div>
+
+	</div>
+    
+<!-----------------------Pagina PDF----------------------->
+
+<div data-role="page" id="page8" data-title="San Pablo - Language">
+    <section id="content_language">
+      <div class="container PDF">
+      	<object type="text/html" data="pdf.js-master/web/viewer.html" width="100%" height="100%"></object>
+      </div>
+    </section>
+</div>
+
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/jquery.catslider.js"></script>
+		<script>
+			$(function() {
+
+				$( '#mi-slider' ).catslider();
+
+			});
+		</script>-->
+</body>
+</html>

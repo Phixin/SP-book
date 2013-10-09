@@ -1,0 +1,320 @@
+/* This code is only meant for previewing your Reflow design. */
+.primaryContainer {
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+#categorias_box {
+    float: left;
+    height: auto;
+    margin-left: 0%;
+    margin-top: -4px;
+    clear: none;
+    width: 100%;
+    min-height: 50px;
+}
+
+#categorias_box1 {
+    float: left;
+    height: 62px;
+    margin-left: 0.004578%;
+    margin-top: 0px;
+    clear: both;
+    width: 100%;
+    background-color: rgb(224, 16, 30);
+}
+
+#categorias_text {
+    float: left;
+    font-size: 1.4em;
+    width: 10.935974%;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    word-wrap: break-word;
+    margin-left: 6.129456%;
+    margin-top: 21px;
+    clear: none;
+    min-height: 0px;
+    font-family: pt-sans;
+    color: rgb(255, 255, 255);
+}
+
+#categorias_box3 {
+    float: left;
+    height: 62px;
+    margin-left: 0.080872%;
+    margin-top: 0px;
+    clear: none;
+    width: 6.054688%;
+}
+
+#categorias_image1 {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 34.727823%;
+    margin-top: 23px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#categorias_box2 {
+    float: left;
+    height: 62px;
+    margin-left: 75.595093%;
+    margin-top: 0px;
+    clear: none;
+    width: 1.199341%;
+}
+
+#categorias_image {
+    float: left;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: 75.572519%;
+    margin-top: 0px;
+    clear: none;
+    color: rgb(0, 0, 0);
+}
+
+#container_categorias_list{
+    height: auto;
+    clear: both;
+    width: 100%;
+	color: #454545;
+	font-size: 200%;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.lista_categorias{
+	list-style:none;
+	padding:0;
+	text-indent: 0;
+	margin:0;
+}
+
+#container_categorias_list li{
+	display: block;
+	margin: 0;
+	position: relative;
+	overflow: auto;
+	text-align: left;
+	padding:1%
+}
+
+.li_white{
+	border:none;
+}
+
+.li_gray{
+	background-color:#EBEBEB;
+	border-bottom:2px solid #CFCFCF;
+}
+
+.No_libros{
+	font-size:60%;
+	color:#A1A1A1;
+}
+
+#container_categorias_list li img{
+	margin-right: 10px;
+	position: relative;
+	float:left;
+}
+
+.txt_categorias{
+	padding: 2.8%;
+}
+
+#mas_categorias {
+    float: left;
+    height: 45px;
+    margin-left: 0%;
+    margin-top: 0px;
+    clear: none;
+    width: 100%;
+	padding-top:4px;
+}
+
+#categorias_text1 {
+    float: left;
+    font-size: 1.5em;
+    width: auto;
+    height: auto;
+    text-align: left;
+    font-weight: normal;
+    line-height: 1em;
+    word-wrap: break-word;
+    margin-left: 48.239226%;
+    margin-top: 6px;
+    clear: none;
+    min-height: 0px;
+    font-family: pt-sans;
+    color: rgb(51, 51, 51);
+}
+
+@media only screen and (max-width: 1024px) {
+   #categorias_box {
+        float: left;
+        height: auto;
+        margin-left: 0%;
+        margin-top: -4px;
+        clear: none;
+        width: 100%;
+        min-height: 50px;
+   }
+
+   #categorias_box1 {
+        float: left;
+        height: 62px;
+        margin-left: 0.004578%;
+        margin-top: 0px;
+        clear: both;
+        width: 100%;
+        background-color: rgb(224, 16, 30);
+   }
+
+   #categorias_text {
+        float: left;
+        font-size: 1.4em;
+        width: 17.06543%;
+        height: auto;
+        text-align: left;
+        font-weight: normal;
+        line-height: 1em;
+        word-wrap: break-word;
+        margin-left: 6.129456%;
+        margin-top: 21px;
+        clear: none;
+        min-height: 0px;
+        font-family: pt-sans;
+        color: rgb(255, 255, 255);
+   }
+
+   #categorias_box3 {
+        height: 62px;
+        margin-top: 0px;
+        clear: none;
+        width: 6.054688%;
+        float: left;
+        margin-left: 0.080872%;
+   }
+
+   #categorias_image1 {
+        float: none;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-top: 23px;
+        clear: none;
+        color: rgb(0, 0, 0);
+        margin-right: auto;
+   }
+
+   #categorias_box2 {
+        float: left;
+        height: 62px;
+        margin-left: 69.465637%;
+        margin-top: 0px;
+        clear: none;
+        width: 1.199341%;
+   }
+
+   #categorias_image {
+        float: left;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        margin-left: 75.572519%;
+        margin-top: 0px;
+        clear: none;
+        color: rgb(0, 0, 0);
+   }
+
+   #categorias_text1 {
+        margin-top: 6px;
+        margin-left: 47.164917%;
+        clear: none;
+   }
+}
+
+@media only screen and (max-width: 480px) {
+   #categorias_text {
+        height: auto;
+        width: 25.602214%;
+   }
+
+   #categorias_box2 {
+        margin-top: 0px;
+        margin-left: 55.315755%;
+        clear: none;
+        width: 1.197917%;
+        height: 62px;
+   }
+
+   #categorias_box3 {
+        width: 11.673177%;
+        height: 62px;
+        margin-top: 0px;
+        clear: none;
+        margin-left: 0.052083%;
+   }
+
+   #categorias_image1 {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+        clear: none;
+   }
+
+   #categorias_text1 {
+        margin-top: 6px;
+        margin-left: 44.248047%;
+        clear: none;
+   }
+}
+
+@media only screen and (max-width: 320px) {
+   #categorias_box2 {
+        margin-top: 0px;
+        margin-left: 49.042969%;
+        clear: none;
+        width: 1.186523%;
+        height: 62px;
+   }
+
+   #categorias_box3 {
+        margin-top: 0px;
+        clear: none;
+        width: 17.026367%;
+        margin-left: 0.976563%;
+   }
+
+   #categorias_text {
+        width: 25.600586%;
+   }
+
+   #categorias_image1 {
+        margin-top: 23px;
+        margin-left: auto;
+        clear: none;
+        margin-right: auto;
+        float: none;
+   }
+
+   #categorias_text1 {
+        margin-top: 6px;
+        margin-left: 41.123047%;
+        clear: none;
+   }
+}
+
