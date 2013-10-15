@@ -259,6 +259,9 @@
       		document.getElementById("userBtnDet").addEventListener ("click", onShowUserDet, false);
       		document.getElementById("shopBtnDet").addEventListener ("click", onShowShopDet, false);
       		document.getElementById("faqBtnDet").addEventListener ("click", onShowFaqDet, false);
+			document.getElementById("detalle_btnComprar").addEventListener ("click", onShowShopDet, false);
+			
+			console.log(document.getElementById("detalle_btnComprar"))
 			
 			
 			/*
@@ -281,8 +284,12 @@
 		{
 			for(var i=0;i<arrNews.length; i++)
 			{
-				var liObject = '<li><a href="#"><img src='+arrNews[i].img+' alt="img01"><figcaption><strong>'+arrNews[i].title+'</strong><br/>'+arrNews[i].editorial+'</figcaption></a></li>';
-				$('#listHomeFeatures').append(liObject);	
+				var liObject = '<li><a href="#page7"><img src='+arrNews[i].img+' alt="img01"><figcaption><strong>'+arrNews[i].title+'</strong><br/>'+arrNews[i].editorial+'</figcaption></a></li>';
+				$('#listHomeFeatures').append(liObject);
+				$('#kids').append(liObject);
+				$('#teens').append(liObject);
+				$('#fathers').append(liObject);
+				$('#old').append(liObject);
 			}
 			
 			for(var j=0;j<arrFeatures.length; j++)
@@ -316,8 +323,8 @@
 			actualPage = myPage;
 			console.log($("#"+ actualPage ).width())
 			
-				console.log("Entro: " + $("#"+ actualPage));
-				$("body").css({"min-height": $("#"+ actualPage).height() })
+				//console.log("Entro: " + $("#"+ actualPage));
+				//$("body").css({"min-height": $("#"+ actualPage).height() })
 			
 		}
 		
@@ -628,7 +635,7 @@
             </div> <!--Search Drop-->
             <div id="userDiv" class="sesion_drop grid-full">
                 <div class="gray_pointer sesion_pointer"></div>
-           		<div class="txt_sesion"><a onClick="onChange('page4')">Iniciar sesión</a> | <a href="#">Registrarse</a></div>
+           		<div class="txt_sesion"><a onClick="onChange('page4')">Iniciar sesión</a> | <a onClick="onChange('page2')">Registrarse</a></div>
             </div> <!--Sesion Drop-->
             <div id="shopDiv" class="carro_drop grid-full">
                 <div class="gray_pointer carrito_pointer"></div>
@@ -659,7 +666,7 @@
 					</div>
                     <div class="btns_carrito">
                     	<a id="btn_fin" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Finalizar Compra</a>
-                    	<a id="btn_ver" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Ver Carrito</a>
+                    	
                     </div>
                 </div>
             </div> <!--Carrito Drop-->
@@ -736,7 +743,7 @@
                             <a href="#"><img src="images/mas.png"></a>
                         </nav>
                         <ul id="listHomeFeatures" class="books_novedades">
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
                             <li>
@@ -745,23 +752,23 @@
             </section>
             <section>
             	<div class="banner_categorias gallery cf">
-                	<img src="images/banner_categorias_1.png" class="grid-unit">
-                	<img src="images/banner_categorias_2.png" class="grid-unit">
-                    <img src="images/banner_categorias_3.png" class="grid-unit">
-                    <img src="images/banner_categorias_4.png" class="grid-unit">
+                	<a href="#page6"><img src="images/banner_categorias_1.png" class="grid-unit"></a>
+                	<a href="#page6"><img src="images/banner_categorias_2.png" class="grid-unit"></a>
+                    <a href="#page6"><img src="images/banner_categorias_3.png" class="grid-unit"></a>
+                    <a href="#page6"><img src="images/banner_categorias_4.png" class="grid-unit"></a>
                 </div>
             </section>
             <div data-role="footer" class="nav_bottom">
                 <nav>
-                    <a href="#">Categorias</a>
+                    <a href="#page6">Categorias</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Promociones</a>
+                    <a href="#page5">Promociones</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Destacado</a>
+                    <a href="#page6">Destacado</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Autores</a>
+                    <a href="#page6">Autores</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Comprados </a>
+                    <a href="#page6">Comprados </a>
                 </nav>
             </div>
         </div>
@@ -807,11 +814,11 @@
            <div data-role="footer" class="nav_bottom footer_perfil">
                 <nav>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a onClick="onChange('page5')">Libreria</a>
+                    <a href="#page5">Libreria</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Mi biblioteca</a>
+                    <a href="#page6">Mi biblioteca</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Lista de deseos</a>
+                    <a href="#page6">Lista de deseos</a>
                     <img class="spliterb" src="images/spliter_black.png">
                     <a href="#"><img src="images/mas_peq.png"  alt=""/></a>
                     <img class="spliterb" src="images/spliter_black.png">
@@ -848,7 +855,7 @@
             </div> <!--Search Drop-->
             <div id="userDivCat2" class="sesion_drop grid-full">
                 <div class="gray_pointer sesion_pointer"></div>
-           		<div class="txt_sesion"><a href="#">Iniciar sesión</a> | <a href="#">Registrarse</a></div>
+           		<div class="txt_sesion"><a onClick="onChange('page4')">Iniciar sesión</a> | <a onClick="onChange('page2')">Registrarse</a></div>
             </div> <!--Sesion Drop-->
             <div id="shopDivCat2" class="carro_drop grid-full">
                 <div class="gray_pointer carrito_pointer"></div>
@@ -879,7 +886,7 @@
 					</div>
                     <div class="btns_carrito">
                     	<a id="btn_fin" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Finalizar Compra</a>
-                    	<a id="btn_ver" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Ver Carrito</a>
+                    	
                     </div>
                 </div>
             </div> <!--Carrito Drop-->
@@ -964,41 +971,17 @@
                </div>
            </div>
            <div id="categoria" class='clearfix listcategory'>
-           	<ul>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+           	<ul id="kids">
+                            <li><a href="#page7"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
                 </ul>
@@ -1011,41 +994,17 @@
                </div>
            </div>
            <div id='categoria' class='clearfix listcategory'>
-           	<ul>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+           	<ul id="teens">
+                            <li><a href="#page7"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
                 </ul>
@@ -1058,8 +1017,8 @@
                </div>
            </div>
            <div id='categoria' class='clearfix gallery cf'>
-           	<img src="images/destacado1.png"  alt=""/>
-            	<img src="images/destacado2.png"  alt=""/>
+           	<a href="#page6"><img src="images/destacado1.png"  alt=""/></a>
+           	<a href="#page6"><img src="images/destacado2.png"  alt=""/></a>
            </div>
            <div id='categoria_box13' class='clearfix'>
                <p id='categoria_text4'>
@@ -1069,41 +1028,17 @@
                </div>
            </div>
            <div id='categoria' class='clearfix listcategory'>
-           	<ul>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+           	<ul id="fathers">
+                            <li><a href="#page7"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
                 </ul>
@@ -1116,41 +1051,17 @@
                </div>
            </div>
            <div id='categoria' class='clearfix listcategory'>
-           	<ul>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+           	<ul id="old">
+                            <li><a href="#page7"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
-                            <br/>
-                            Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page7"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
                 </ul>
@@ -1164,15 +1075,15 @@
        
        <div data-role="footer" class="nav_bottom">
                 <nav>
-                    <a onClick="onChange('page6')">Categorias</a>
+                    <a href="#page6">Categorias</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Promociones</a>
+                    <a href="#page5">Promociones</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Destacado</a>
+                    <a href="#page6">Destacado</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Autores</a>
+                    <a href="#page6">Autores</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Comprados </a>
+                    <a href="#page6">Comprados </a>
                 </nav>
             </div>
 	</div>
@@ -1206,7 +1117,7 @@
             </div> <!--Search Drop-->
             <div id="userDivCat" class="sesion_drop grid-full">
                 <div class="gray_pointer sesion_pointer"></div>
-           		<div  class="txt_sesion"><a href="#">Iniciar sesión</a> | <a href="#">Registrarse</a></div>
+           		<div  class="txt_sesion"><a onClick="onChange('page4')">Iniciar sesión</a> | <a onClick="onChange('page2')">Registrarse</a></div>
             </div> <!--Sesion Drop-->
             <div id="shopDivCat" class="carro_drop grid-full">
                 <div class="gray_pointer carrito_pointer"></div>
@@ -1237,7 +1148,7 @@
 					</div>
                     <div class="btns_carrito">
                     	<a id="btn_fin" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Finalizar Compra</a>
-                    	<a id="btn_ver" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Ver Carrito</a>
+                    	
                     </div>
                 </div>
             </div> <!--Carrito Drop-->
@@ -1315,81 +1226,81 @@
        <div id='container_categorias_list' class='clearfix'>
           <ul class="lista_categorias">
               <li>
-              	<a onClick="onChange('page7')"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li class="li_gray">
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li>
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li class="li_gray">
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li>
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li class="li_gray">
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li>
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li class="li_gray">
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li>
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
               </li>
               <li class="li_gray">
-              	<a href="#"><img src="images/img_categorias1.png"></a>
+              	<a href="#page7"><img src="images/img_categorias1.png"></a>
                 	<div class="txt_categorias">
-                      <a href="#">Biblia</a>
+                      <a href="#page7">Biblia</a>
                       <br/>
                       <span class="No_libros">10 Libros</span>
                   </div>
@@ -1404,15 +1315,15 @@
        
        <div data-role="footer" class="nav_bottom">
                 <nav>
-                    <a href="#">Categorias</a>
+                    <a href="#page6">Categorias</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Promociones</a>
+                    <a href="#page5">Promociones</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Destacado</a>
+                    <a href="#page6">Destacado</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Autores</a>
+                    <a href="#page6">Autores</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Comprados </a>
+                    <a href="#page6">Comprados </a>
                 </nav>
             </div>
 	</div>
@@ -1446,7 +1357,7 @@
             </div> <!--Search Drop-->
             <div id="userDivDet" class="sesion_drop grid-full">
                 <div class="gray_pointer sesion_pointer"></div>
-           		<div class="txt_sesion"><a href="#">Iniciar sesión</a> | <a href="#">Registrarse</a></div>
+           		<div class="txt_sesion"><a onClick="onChange('page4')">Iniciar sesión</a> | <a onClick="onChange('page2')">Registrarse</a></div>
             </div> <!--Sesion Drop-->
             <div id="shopDivDet" class="carro_drop grid-full">
                 <div class="gray_pointer carrito_pointer"></div>
@@ -1477,7 +1388,7 @@
 					</div>
                     <div class="btns_carrito">
                     	<a id="btn_fin" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Finalizar Compra</a>
-                    	<a id="btn_ver" href="#" data-role="button" data-inline="true" data-theme="c" data-mini="true">Ver Carrito</a>
+                    	
                     </div>
                 </div>
             </div> <!--Carrito Drop-->
@@ -1575,8 +1486,8 @@
            Precio<br /><span id='detalle_textspan'>$20.000</span>
            </p>
        </div>
-       <img id='detalle_btnComprar' src='images/btnComprar.jpg' class='image' />
-       <img id='detalle_btnMuestra' src='images/btnMuestra.jpg' class='image' />
+       <a href="#"><img id='detalle_btnComprar' src='images/btnComprar.jpg' class='image' /></a>
+       <a href="#page8"><img id='detalle_btnMuestra' src='images/btnMuestra.jpg' class='image' /></a>
        <div id='tab_detalle' class='clearfix'>
        
        		<ul class="tabs">
@@ -1697,40 +1608,40 @@ Sigue a todo esto un Apéndice, en el que se ofrecen normas prácticas para la c
        <div id='detalle_slider' class='clearfix'>
            <div id="detalle_categoria" class='clearfix listcategory'>
            	<ul>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                             <li><a href="#page8"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/1.png" alt="img01"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/2.png" alt="img02"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/3.png" alt="img03"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/4.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                            <li><a href="#"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/5.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
-                             <li><a href="#"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
+                            <li><a href="#page8"><img src="images/6.png" alt="img04"><figcaption><strong>El Habitus en la ...</strong>
                             <br/>
                             Editorial San Pablo</figcaption></a></li>
                 </ul>
@@ -1742,15 +1653,15 @@ Sigue a todo esto un Apéndice, en el que se ofrecen normas prácticas para la c
       </div>
        <div data-role="footer" class="nav_bottom">
                 <nav>
-                    <a href="#">Categorias</a>
+                    <a href="#page6">Categorias</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Promociones</a>
+                    <a href="#page5">Promociones</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Destacado</a>
+                    <a href="#page6">Destacado</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Autores</a>
+                    <a href="#page6">Autores</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#">Comprados </a>
+                    <a href="#page6">Comprados </a>
                 </nav>
             </div>
 

@@ -101,6 +101,10 @@
 	margin:0;
 }
 
+.lista_categorias > img{
+	cursor:pointer;
+}
+
 #container_categorias_list li{
 	display: block;
 	margin: 0;
