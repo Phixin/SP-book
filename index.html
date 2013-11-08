@@ -262,7 +262,7 @@
 			document.getElementById("detalle_btnComprar").addEventListener ("click", onShowShopDet, false);
 			
 			console.log(document.getElementById("detalle_btnComprar"))
-			
+			$("body").css({"height": 480 });
 			
 			/*
 			console.log("width: " + $("#page3").width());
@@ -321,8 +321,24 @@
 		{
 			window.location.assign("index.html#"+myPage)	
 			actualPage = myPage;
-			console.log($("#"+ actualPage ).width())
+			console.log(actualPage)
 			
+			if(actualPage == 0)
+				$("body").css({"height": 480 });
+			else if(actualPage == "page1")
+				$("body").css({"height": 570 });
+			else if(actualPage == "page2")
+				$("body").css({"height": 1220 });
+			else if(actualPage == "page3")
+				$("body").css({"height": 1920 });
+			else if(actualPage == "page4")
+				$("body").css({"height": 480 });
+			else if(actualPage == "page5")
+				$("body").css({"height": 2200 });
+			else if(actualPage == "page6")
+				$("body").css({"height": 160 + (155 * 10) + 100});
+			else if(actualPage == "page6")
+				$("body").css({"height": 1300});
 				//console.log("Entro: " + $("#"+ actualPage));
 				//$("body").css({"min-height": $("#"+ actualPage).height() })
 			
@@ -517,10 +533,10 @@
                             </div>
                             <div class="grid-full btns_registro">
                                 <div class="grid-half">
-                                    <input class="btn_registro" type="submit" value="Acepto" />
+                                    <input class="btn_registro" type="submit" value="Acepto"/>
                                 </div>
                                 <div class="grid-half">
-                                    <a href="#page3"><input class="btn_registro" type="submit" value="Registrarse" /></a>
+                                    <input class="btn_registro" type="submit" value="Registrarse" onClick="onChange('page3')"/>
                                 </div>
                             </div>
                             <section id="grid_registro3" class="clearfix politicas">
@@ -754,23 +770,23 @@
             </section>
             <section>
             	<div class="banner_categorias gallery cf">
-                	<a href="#page6"><img src="images/banner_categorias_1.png" class="grid-unit"></a>
-                	<a href="#page6"><img src="images/banner_categorias_2.png" class="grid-unit"></a>
-                    <a href="#page6"><img src="images/banner_categorias_3.png" class="grid-unit"></a>
-                    <a href="#page6"><img src="images/banner_categorias_4.png" class="grid-unit"></a>
+                	<img src="images/banner_categorias_1.png" class="grid-unit" onClick="onChange('page6')">
+                	<img src="images/banner_categorias_2.png" class="grid-unit" onClick="onChange('page6')">
+                    <img src="images/banner_categorias_3.png" class="grid-unit" onClick="onChange('page6')">
+                    <img src="images/banner_categorias_4.png" class="grid-unit" onClick="onChange('page6')">
                 </div>
             </section>
             <div data-role="footer" class="nav_bottom">
                 <nav>
-                    <a href="#page6">Categorias</a>
+                    <a onClick="onChange('page6')">>Categorias</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#page5">Promociones</a>
+                    <a onClick="onChange('page5')">Promociones</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#page6">Destacado</a>
+                    <a onClick="onChange('page6')" >Destacado</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#page6">Autores</a>
+                    <a onClick="onChange('page6')">Autores</a>
                     <img class="spliterb" src="images/spliter_black.png">
-                    <a href="#page6">Comprados </a>
+                    <a onClick="onChange('page6')">Comprados </a>
                 </nav>
             </div>
         </div>

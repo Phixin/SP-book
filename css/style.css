@@ -1847,15 +1847,16 @@ code {
 		display:none;
 	}
 	.bg_red{
-		height:480px;
+		height:550px;
 		background-repeat:repeat-y;
 	}
 	.bg_red_registro{
-		height:880px;
+		height:1200px;
 		background-repeat:repeat-y;
 	}
 	#content_registro {
 		height:550px;
+		overflow:auto;
 	}
 	body {
 		overflow:auto;
@@ -1867,6 +1868,17 @@ code {
 	.last_big{
 		height:16em;
 	}
+	.logo_color {
+		margin:8% 0 0 11%;;
+	}
+	.mas_info {
+		overflow:visible
+	}
+	.ui-checkbox input {
+		width:auto;
+		height:auto;
+	}
+}
 
 
 /*--------------------------------------
