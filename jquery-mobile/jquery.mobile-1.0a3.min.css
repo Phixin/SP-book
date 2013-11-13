@@ -178,7 +178,12 @@
 	border-radius:9px*/
 	}
 
-.ui-icon-disc{background-color:#666;background-color:rgba(0,0,0,.3);-moz-border-radius:9px;-webkit-border-radius:9px;border-radius:9px}.ui-icon-black{background-image:url(images/icons-18-black.png)}.ui-icon-black-disc{background-color:#fff;background-color:rgba(255,255,255,.3);-moz-border-radius:9px;-webkit-border-radius:9px;border-radius:9px}@media screen and (-webkit-min-device-pixel-ratio:2),screen and (max--moz-device-pixel-ratio:2){.ui-icon{background-image:url(images/icons-36-white.png);background-size:630px 18px}.ui-icon-black{background-image:url(images/icons-36-black.png)}}.ui-icon-plus{background-position:-0 0}.ui-icon-minus{background-position:-36px 0}.ui-icon-delete{background-position:-72px 0}.ui-icon-arrow-r{background-position:-108px 0}.ui-icon-arrow-l{background-position:-144px 0}.ui-icon-arrow-u{background-position:-180px 0}
+.ui-icon-disc{background-color:#666;background-color:rgba(0,0,0,.3);-moz-border-radius:9px;-webkit-border-radius:9px;border-radius:9px}.ui-icon-black{background-image:url(images/icons-18-black.png)}.ui-icon-black-disc{background-color:#fff;background-color:rgba(255,255,255,.3);-moz-border-radius:9px;-webkit-border-radius:9px;border-radius:9px}@media screen and (-webkit-min-device-pixel-ratio:2),screen and (max--moz-device-pixel-ratio:2){.ui-icon{background-image:url(images/icons-36-white.png);background-size:630px 18px}.ui-icon-black{background-image:url(images/icons-36-black.png)}}.ui-icon-plus{background-position:-0 0}.ui-icon-minus{background-position:-36px 0}
+
+.ui-icon-delete {
+	background-position:-152px -7px;
+	}
+.ui-icon-arrow-r{background-position:-108px 0}.ui-icon-arrow-l{background-position:-144px 0}.ui-icon-arrow-u{background-position:-180px 0}
 
 .ui-icon-arrow-d{
 	background-position:-352px -5px
